@@ -1,0 +1,5 @@
+@media screen and (max-width: 992px) {
+    .deleteBtn{
+        margin-top: 4px !important;
+    }
+}

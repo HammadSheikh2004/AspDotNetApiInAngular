@@ -1,0 +1,43 @@
+<app-heading-comp headingText="Edit Data"></app-heading-comp>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-12">
+            <form #myForm="ngForm" (ngSubmit)="editData(myForm)" enctype="multipart/form-data">
+                <div *ngIf="userData">
+                    <div class="mb-3">
+                        <input type="hidden" name="id" ngModel [(ngModel)]="userData.id">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="UserName"
+                            [(ngModel)]="userData.userName" ngModel aria-describedby="Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="UserEmail" id="Email"
+                            [(ngModel)]="userData.userEmail" ngModel aria-describedby="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="UserPhone" ngModel
+                            [(ngModel)]="userData.userPhone" aria-describedby="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" class="form-control" id="age" [(ngModel)]="userData.userAge" name="UserAge"
+                            ngModel aria-describedby="age">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="hidden" name="Image" [(ngModel)]="userData.image">
+                        <img src="http://localhost:5262/images/{{userData.image}}" class="d-block mb-3" alt="User Image"
+                            style="width: 100px; height: 100px;">
+                        <input type="file" class="form-control" id="imageId" name="file" ngModel
+                            aria-describedby="image">
+                    </div>
+                    <app-button-com btnText="Edit Data"></app-button-com>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
